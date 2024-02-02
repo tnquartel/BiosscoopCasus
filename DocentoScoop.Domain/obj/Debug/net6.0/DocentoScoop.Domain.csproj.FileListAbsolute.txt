@@ -1,0 +1,14 @@
+C:\Projects\3.3-BiosscoopCasus\DocentoScoop.Domain\bin\Debug\net6.0\DocentoScoop.Domain.exe
+C:\Projects\3.3-BiosscoopCasus\DocentoScoop.Domain\bin\Debug\net6.0\DocentoScoop.Domain.deps.json
+C:\Projects\3.3-BiosscoopCasus\DocentoScoop.Domain\bin\Debug\net6.0\DocentoScoop.Domain.runtimeconfig.json
+C:\Projects\3.3-BiosscoopCasus\DocentoScoop.Domain\bin\Debug\net6.0\DocentoScoop.Domain.dll
+C:\Projects\3.3-BiosscoopCasus\DocentoScoop.Domain\bin\Debug\net6.0\DocentoScoop.Domain.pdb
+C:\Projects\3.3-BiosscoopCasus\DocentoScoop.Domain\obj\Debug\net6.0\DocentoScoop.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\3.3-BiosscoopCasus\DocentoScoop.Domain\obj\Debug\net6.0\DocentoScoop.Domain.AssemblyInfoInputs.cache
+C:\Projects\3.3-BiosscoopCasus\DocentoScoop.Domain\obj\Debug\net6.0\DocentoScoop.Domain.AssemblyInfo.cs
+C:\Projects\3.3-BiosscoopCasus\DocentoScoop.Domain\obj\Debug\net6.0\DocentoScoop.Domain.csproj.CoreCompileInputs.cache
+C:\Projects\3.3-BiosscoopCasus\DocentoScoop.Domain\obj\Debug\net6.0\DocentoScoop.Domain.dll
+C:\Projects\3.3-BiosscoopCasus\DocentoScoop.Domain\obj\Debug\net6.0\refint\DocentoScoop.Domain.dll
+C:\Projects\3.3-BiosscoopCasus\DocentoScoop.Domain\obj\Debug\net6.0\DocentoScoop.Domain.pdb
+C:\Projects\3.3-BiosscoopCasus\DocentoScoop.Domain\obj\Debug\net6.0\DocentoScoop.Domain.genruntimeconfig.cache
+C:\Projects\3.3-BiosscoopCasus\DocentoScoop.Domain\obj\Debug\net6.0\ref\DocentoScoop.Domain.dll

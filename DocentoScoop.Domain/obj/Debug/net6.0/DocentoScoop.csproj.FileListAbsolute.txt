@@ -1,0 +1,14 @@
+C:\Projects\DocentoScoop\DocentoScoop\obj\Debug\net6.0\DocentoScoop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\DocentoScoop\DocentoScoop\obj\Debug\net6.0\DocentoScoop.AssemblyInfoInputs.cache
+C:\Projects\DocentoScoop\DocentoScoop\obj\Debug\net6.0\DocentoScoop.AssemblyInfo.cs
+C:\Projects\DocentoScoop\DocentoScoop\obj\Debug\net6.0\DocentoScoop.csproj.CoreCompileInputs.cache
+C:\Projects\DocentoScoop\DocentoScoop\bin\Debug\net6.0\DocentoScoop.exe
+C:\Projects\DocentoScoop\DocentoScoop\bin\Debug\net6.0\DocentoScoop.deps.json
+C:\Projects\DocentoScoop\DocentoScoop\bin\Debug\net6.0\DocentoScoop.runtimeconfig.json
+C:\Projects\DocentoScoop\DocentoScoop\bin\Debug\net6.0\DocentoScoop.dll
+C:\Projects\DocentoScoop\DocentoScoop\bin\Debug\net6.0\DocentoScoop.pdb
+C:\Projects\DocentoScoop\DocentoScoop\obj\Debug\net6.0\DocentoScoop.dll
+C:\Projects\DocentoScoop\DocentoScoop\obj\Debug\net6.0\refint\DocentoScoop.dll
+C:\Projects\DocentoScoop\DocentoScoop\obj\Debug\net6.0\DocentoScoop.pdb
+C:\Projects\DocentoScoop\DocentoScoop\obj\Debug\net6.0\DocentoScoop.genruntimeconfig.cache
+C:\Projects\DocentoScoop\DocentoScoop\obj\Debug\net6.0\ref\DocentoScoop.dll
