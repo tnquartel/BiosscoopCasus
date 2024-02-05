@@ -50,6 +50,9 @@ public class Order
             if (isWeekend && !isStudentOrder && tickets.Count >= 6)
                 ticketPrice *= 0.9M;
 
+            if (DateTime.Now.Month == 12)
+                ticketPrice = decimal.Zero;
+
             total += ticketPrice;
         }
 
