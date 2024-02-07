@@ -9,6 +9,37 @@ namespace DocentoScoop.Domain.Tests
     public class OrderTests
     {
 
+
+        [TestMethod]
+        public void Export_ShouldExecute_ForJson()
+        {
+            // Arrange
+            Order order = CreateFakeOrder(6, 10M, false, false, true);
+
+            // Act
+            order.Export(OrderExportFormat.JSON);
+
+            // Assert
+            Assert.IsTrue(true);
+
+        }
+
+        [TestMethod]
+        public void Export_ShouldExecute_ForPlainText()
+        {
+            // Arrange
+            Order order = CreateFakeOrder(6, 10M, false, false, true);
+
+            // Act
+            order.Export(OrderExportFormat.PLAINTEXT);
+
+            // Assert
+            Assert.IsTrue(true);
+
+        }
+
+
+
         [TestMethod]
         public void CalculatePrice_ShouldApplyDiscount_ForNonStudentOrderInTheWeekendOver6Tickets()
         {

@@ -27,8 +27,9 @@ namespace DocentoScoop.Domain.Exports
             }
             jsonOrder.Add("tickets", jsonTickets);
 
-            string path = Path.Combine(Path.GetTempPath(), "", $"docentoscoop_order_{order.GetOrderNr()}.json");
-            File.WriteAllText(path, jsonOrder.ToString());
+            Console.WriteLine(jsonOrder.ToString());
+
+      
         }
 
         public OrderExportFormat Supports() => OrderExportFormat.JSON;

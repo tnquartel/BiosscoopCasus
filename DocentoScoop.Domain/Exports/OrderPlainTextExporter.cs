@@ -12,8 +12,7 @@ namespace DocentoScoop.Domain.Exports
             foreach (MovieTicket ticket in order.GetTickets())
                 sb.AppendLine(ticket.ToString());
 
-            string path = Path.Combine(Path.GetTempPath(), "", $"docentoscoop_order_{order.GetOrderNr()}.txt");
-            File.WriteAllText(path, sb.ToString());
+            Console.WriteLine(sb.ToString());
         }
 
         public OrderExportFormat Supports() => OrderExportFormat.PLAINTEXT;
