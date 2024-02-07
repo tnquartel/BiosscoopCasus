@@ -1,11 +1,13 @@
-﻿namespace DocentoScoop.Domain;
+﻿using System.Net.Sockets;
+
+namespace DocentoScoop.Domain.Models;
 
 public class MovieTicket
 {
-    private int rowNr;
-    private int seatNr;
-    private bool isPremium;
-    private MovieScreening movieScreening;
+    private readonly int rowNr;
+    private readonly int seatNr;
+    private readonly bool isPremium;
+    private readonly MovieScreening movieScreening;
 
     public MovieTicket(MovieScreening movieScreening, int rowNr, int seatNr, bool isPremium)
     {
@@ -25,9 +27,18 @@ public class MovieTicket
         return movieScreening.getPricePerSeat();
     }
 
+    public int GetSeatNr() => this.seatNr;
+
+    public int GetRowNr() => this.rowNr;
+
     public DateTime GetScreeningDate()
     {
         return movieScreening.getDate();
     }
 
+    public bool IsWeekendScreening()
+    {
+        return this.GetScreeningDate().DayOfWeek == DayOfWeek.Sunday || this.GetScreeningDate().DayOfWeek == DayOfWeek.Saturday;
     }
+
+}

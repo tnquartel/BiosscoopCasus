@@ -1,3 +1,8 @@
+using DocentoScoop.Domain.Exports;
+using DocentoScoop.Domain.Models;
+using DocentoScoop.Domain.Rules;
+using DocentoScoop.Domain.Tools;
+
 namespace DocentoScoop.Domain.Tests
 {
     [TestClass]
@@ -64,12 +69,16 @@ namespace DocentoScoop.Domain.Tests
 
         private static Order CreateFakeOrder(int numberOfTickets, decimal basePrice, bool isPremium, bool isStudentOrder, bool isWeekend)
         {
-            Movie movie = new Movie("The Matrix");
+            // Move to factory later
+            var ticketPriceRules = AssemblyScanner.GetInstancesOfType<ITicketPriceRule>();
+            var orderExporters = AssemblyScanner.GetInstancesOfType<IOrderExporter>();
 
+            Movie movie = new Movie("The Matrix");
+            
             // Create a non-weekend movie screening
-            DateTime date = isWeekend ? new DateTime(2024, 1, 27, 19, 0, 0) : new DateTime(2024, 1, 31, 19, 0, 0);
+            DateTime date = isWeekend ? new DateTime(2024, 1, 27, 19, 0, 0, DateTimeKind.Local) : new DateTime(2024, 1, 31, 19, 0, 0, DateTimeKind.Local);
             MovieScreening movieScreening = new MovieScreening(movie, date, basePrice);
-            Order order = new Order(1, isStudentOrder);
+            Order order = new Order(1, isStudentOrder, ticketPriceRules, orderExporters);
             for (int i = 0; i < numberOfTickets; i++)
                 order.AddSeatReservation(new MovieTicket(movieScreening, 1, 1, isPremium));
             return order;
