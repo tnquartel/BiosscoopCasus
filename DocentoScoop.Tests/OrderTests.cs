@@ -3,7 +3,7 @@ using DocentoScoop.Domain.Models;
 using DocentoScoop.Domain.Rules;
 using DocentoScoop.Domain.Tools;
 
-namespace DocentoScoop.Domain.Tests
+namespace DocentoScoop.Tests
 {
     [TestClass]
     public class OrderTests
@@ -95,8 +95,6 @@ namespace DocentoScoop.Domain.Tests
             Assert.IsTrue(price == 13M);
 
         }
-
-
 
         private static Order CreateFakeOrder(int numberOfTickets, decimal basePrice, bool isPremium, bool isStudentOrder, bool isWeekend)
         {

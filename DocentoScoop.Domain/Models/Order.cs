@@ -1,12 +1,14 @@
 ﻿using DocentoScoop.Domain.Exports;
+using DocentoScoop.Domain.Models.OrderState;
 using DocentoScoop.Domain.Rules;
 using DocentoScoop.Domain.Tools;
+using System.Linq.Expressions;
 using System.Text;
 using System.Text.Json.Nodes;
 
 namespace DocentoScoop.Domain.Models;
 
-public class Order
+public class Order : IOrderContext
 {
     private readonly int orderNr;
     private readonly bool isStudentOrder;
@@ -15,6 +17,8 @@ public class Order
     private readonly IEnumerable<ITicketPriceRule> ticketPriceRules = new List<ITicketPriceRule>();
     private readonly IEnumerable<IOrderExporter> orderExporters = new List<IOrderExporter>();
 
+    private IOrderState? _currentState = null;
+
 
     public Order(int orderNr, bool isStudentOrder, IEnumerable<ITicketPriceRule> ticketPriceRules, IEnumerable<IOrderExporter> orderExporters)
     {
@@ -22,7 +26,11 @@ public class Order
         this.isStudentOrder = isStudentOrder;
         this.ticketPriceRules = ticketPriceRules;
         this.orderExporters = orderExporters;
+
+        this._currentState = new OrderCreated(this);
     }
+
+    public void SetState(IOrderState state) => this._currentState = state;
 
     public int GetOrderNr()
     {
@@ -75,6 +83,8 @@ public class Order
         exporter.Export(this);
     }
 
+    public void Submit() => this._currentState!.Submit();
 
-
+    public void Change(/* some params here */) => this._currentState!.Change(/* some params here */);
+    
 }
