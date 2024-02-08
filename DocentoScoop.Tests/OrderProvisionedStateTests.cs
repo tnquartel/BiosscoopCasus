@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 namespace DocentoScoop.Tests
 {
     [TestClass]
-    public class OrderProvisionedTests
+    public class OrderProvisionedStateTests
     {
         [TestMethod]
         public void Cancel_SetsOrderCancelled_WhenTriggered()
         {
             // Arrange
             var orderContext = new Mock<IOrderContext>();
-            var orderState = new OrderProvisioned(orderContext.Object);
+            var orderState = new OrderProvisionedState(orderContext.Object);
 
             // Act
             orderState.Cancel();
 
             // Assert
-            orderContext.Verify(x => x.SetState(It.IsAny<OrderCancelled>()));
+            orderContext.Verify(x => x.SetState(It.IsAny<OrderCancelledState>()));
         }
 
 
@@ -31,13 +31,13 @@ namespace DocentoScoop.Tests
         {
             // Arrange
             var orderContext = new Mock<IOrderContext>();
-            var orderState = new OrderProvisioned(orderContext.Object);
+            var orderState = new OrderProvisionedState(orderContext.Object);
 
             // Act
             orderState.CheckPayment(true);
 
             // Assert
-            orderContext.Verify(x => x.SetState(It.IsAny<OrderPaid>()));
+            orderContext.Verify(x => x.SetState(It.IsAny<OrderPaidState>()));
         }
 
 
@@ -46,13 +46,13 @@ namespace DocentoScoop.Tests
         {
             // Arrange
             var orderContext = new Mock<IOrderContext>();
-            var orderState = new OrderProvisioned(orderContext.Object);
+            var orderState = new OrderProvisionedState(orderContext.Object);
 
             // Act
             orderState.CheckPayment(false);
 
             // Assert
-            orderContext.Verify(x => x.SetState(It.IsAny<OrderCancelled>()));
+            orderContext.Verify(x => x.SetState(It.IsAny<OrderCancelledState>()));
         }
 
     }

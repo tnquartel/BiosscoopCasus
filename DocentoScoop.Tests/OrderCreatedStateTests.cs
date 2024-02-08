@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace DocentoScoop.Tests
 {
     [TestClass]
-    public class OrderCreatedTests
+    public class OrderCreatedStateTests
     {
 
 
@@ -18,7 +18,7 @@ namespace DocentoScoop.Tests
         {
             // Arrange
             var orderContext = new Mock<IOrderContext>();
-            var orderState = new OrderCreated(orderContext.Object);
+            var orderState = new OrderCreatedState(orderContext.Object);
 
             // Act
 
@@ -33,13 +33,13 @@ namespace DocentoScoop.Tests
         {
             // Arrange
             var orderContext = new Mock<IOrderContext>();
-            var orderState = new OrderCreated(orderContext.Object);
+            var orderState = new OrderCreatedState(orderContext.Object);
 
             // Act
             orderState.Submit();
 
             // Assert
-            orderContext.Verify(x => x.SetState(It.IsAny<OrderReserved>()));
+            orderContext.Verify(x => x.SetState(It.IsAny<OrderReservedState>()));
         }
     }
 }

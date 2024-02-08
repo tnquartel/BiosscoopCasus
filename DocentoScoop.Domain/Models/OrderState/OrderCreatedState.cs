@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DocentoScoop.Domain.Models.OrderState
 {
-    public class OrderCreated : IOrderState
+    public class OrderCreatedState : IOrderState
     {
         private readonly IOrderContext _context;
 
-        public OrderCreated(IOrderContext context)
+        public OrderCreatedState(IOrderContext context)
         {
             this._context = context;
         }
@@ -26,7 +26,7 @@ namespace DocentoScoop.Domain.Models.OrderState
         public void Pay() => throw new InvalidOperationException("Cannot pay, not submitted");
         
 
-        public void Submit() => _context.SetState(new OrderReserved(_context));
+        public void Submit() => _context.SetState(new OrderReservedState(_context));
         
 
         public void SendTickets() => throw new InvalidOperationException("Order cancelled, cannot submit");

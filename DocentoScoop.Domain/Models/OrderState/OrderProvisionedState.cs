@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace DocentoScoop.Domain.Models.OrderState
 {
-    public class OrderProvisioned : IOrderState
+    public class OrderProvisionedState : IOrderState
     {
         private readonly IOrderContext _context;
 
-        public OrderProvisioned(IOrderContext context)
+        public OrderProvisionedState(IOrderContext context)
         {
             _context = context;
         }
 
-        public void Cancel() => _context.SetState(new OrderCancelled());
+        public void Cancel() => _context.SetState(new OrderCancelledState());
 
         public void Change() => throw new InvalidOperationException("Order provisioned, cannot change");
 
         public void CheckPayment(bool paid)
         {
-            this._context.SetState(paid ? new OrderPaid(_context) : new OrderCancelled());
+            this._context.SetState(paid ? new OrderPaidState(_context) : new OrderCancelledState());
         }
 
         public void Pay() => throw new InvalidOperationException("Order provisioned, checking payment later");

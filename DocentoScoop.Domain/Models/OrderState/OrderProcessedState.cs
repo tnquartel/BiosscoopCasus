@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DocentoScoop.Domain.Models.OrderState
 {
-    public class OrderProcessed : IOrderState
+    public class OrderProcessedState : IOrderState
     {
         public void Cancel() => throw new InvalidOperationException("Order is processed, your operation is futile");
 

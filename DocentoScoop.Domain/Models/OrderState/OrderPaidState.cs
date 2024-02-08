@@ -1,10 +1,10 @@
 ﻿namespace DocentoScoop.Domain.Models.OrderState
 {
-    public class OrderPaid : IOrderState
+    public class OrderPaidState : IOrderState
     {
         private readonly IOrderContext _context;
 
-        public OrderPaid(IOrderContext context)
+        public OrderPaidState(IOrderContext context)
         {
             _context = context;
         }
@@ -24,7 +24,7 @@
         public void SendTickets()
         {
             // Send some tickets and then...
-            _context.SetState(new OrderProcessed());
+            _context.SetState(new OrderProcessedState());
         }
 
 

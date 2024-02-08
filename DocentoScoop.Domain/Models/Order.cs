@@ -27,7 +27,7 @@ public class Order : IOrderContext
         this.ticketPriceRules = ticketPriceRules;
         this.orderExporters = orderExporters;
 
-        this._currentState = new OrderCreated(this);
+        this._currentState = new OrderCreatedState(this);
     }
 
     public void SetState(IOrderState state) => this._currentState = state;

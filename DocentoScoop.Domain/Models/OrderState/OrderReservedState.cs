@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace DocentoScoop.Domain.Models.OrderState
 {
-    public class OrderReserved : IOrderState
+    public class OrderReservedState : IOrderState
     {
         private readonly IOrderContext _context;
 
-        public OrderReserved(IOrderContext context)
+        public OrderReservedState(IOrderContext context)
         {
             _context = context;
         }
 
-        public void Cancel() => _context.SetState(new OrderCancelled());
+        public void Cancel() => _context.SetState(new OrderCancelledState());
 
 
         public void Change()
@@ -27,17 +27,15 @@ namespace DocentoScoop.Domain.Models.OrderState
 
         public void CheckPayment(bool paid)
         {
-            this._context.SetState(paid ? new OrderPaid(_context) : new OrderProvisioned(_context));
+            this._context.SetState(paid ? new OrderPaidState(_context) : new OrderProvisionedState(_context));
         } 
 
 
-        public void Pay() => _context.SetState(new OrderPaid(_context));
-
+        public void Pay() => _context.SetState(new OrderPaidState(_context));
 
         public void Submit() => throw new InvalidOperationException("Order reserved, cannot submit");
 
         public void SendTickets() => throw new InvalidOperationException("Order reserved, cannot send tickets unless order is paid");
-
        
     }
 }

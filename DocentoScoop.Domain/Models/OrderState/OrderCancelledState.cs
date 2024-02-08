@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DocentoScoop.Domain.Models.OrderState
 {
-    public class OrderCancelled : IOrderState
+    public class OrderCancelledState : IOrderState
     {
         public void Cancel() => throw new InvalidOperationException("Order already cancelled");
 
