@@ -6,8 +6,6 @@
 
         public void Change();
 
-        public void Pay();
-
         public void SendTickets();
 
         public void CheckPayment(bool paid);

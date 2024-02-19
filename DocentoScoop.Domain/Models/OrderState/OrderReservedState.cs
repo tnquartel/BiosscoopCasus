@@ -31,7 +31,7 @@ namespace DocentoScoop.Domain.Models.OrderState
         } 
 
 
-        public void Pay() => _context.SetState(new OrderPaidState(_context));
+
 
         public void Submit() => throw new InvalidOperationException("Order reserved, cannot submit");
 

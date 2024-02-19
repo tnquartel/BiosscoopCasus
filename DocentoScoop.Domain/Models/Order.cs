@@ -86,5 +86,7 @@ public class Order : IOrderContext
     public void Submit() => this._currentState!.Submit();
 
     public void Change(/* some params here */) => this._currentState!.Change(/* some params here */);
-    
+
+    public DateTime GetScreeningDate() => this.tickets.Select(x => x.GetScreeningDate()).OrderBy(x => x).First();
+
 }

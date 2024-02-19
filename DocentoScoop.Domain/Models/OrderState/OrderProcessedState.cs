@@ -12,8 +12,6 @@ namespace DocentoScoop.Domain.Models.OrderState
 
         public void Change() => throw new InvalidOperationException("Order is processed, your operation is futile");
 
-        public void Pay() => throw new InvalidOperationException("Order is processed, your operation is futile");
-
         public void CheckPayment(bool paid) => throw new InvalidOperationException("Order is processed, your operation is futile");
 
         public void SendTickets() => throw new InvalidOperationException("Order is processed, your operation is futile");

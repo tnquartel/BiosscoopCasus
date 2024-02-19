@@ -15,9 +15,6 @@
         public void Change() => throw new InvalidOperationException("Order paid, cannot change");
 
 
-        public void Pay() => throw new InvalidOperationException("Order paid, cannot repay");
-
-
         public void CheckPayment(bool paid) => throw new InvalidOperationException("Order paid, cannot process payment");
   
 

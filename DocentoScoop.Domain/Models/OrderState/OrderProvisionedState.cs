@@ -10,6 +10,7 @@ namespace DocentoScoop.Domain.Models.OrderState
     {
         private readonly IOrderContext _context;
 
+
         public OrderProvisionedState(IOrderContext context)
         {
             _context = context;
@@ -21,10 +22,15 @@ namespace DocentoScoop.Domain.Models.OrderState
 
         public void CheckPayment(bool paid)
         {
-            this._context.SetState(paid ? new OrderPaidState(_context) : new OrderCancelledState());
-        }
+            var hoursUntilScreening = _context.GetScreeningDate().Subtract(DateTime.Now).TotalHours;
 
-        public void Pay() => throw new InvalidOperationException("Order provisioned, checking payment later");
+            if (paid)
+                this._context.SetState(new OrderPaidState(_context));
+            else if (hoursUntilScreening < 12)
+                    this._context.SetState(new OrderCancelledState());
+
+            // else => do nothing, in the correct state
+        }
 
         public void SendTickets() => throw new InvalidOperationException("Order provisioned, not paid yet");
        

@@ -11,5 +11,7 @@ namespace DocentoScoop.Domain.Models.OrderState
    
         void SetState(IOrderState state);
 
+        DateTime GetScreeningDate();
+
     }
 }

@@ -21,9 +21,6 @@ namespace DocentoScoop.Domain.Models.OrderState
 
 
         public void CheckPayment(bool paid) => throw new InvalidOperationException("Cannot check payment, not submitted");
-
-
-        public void Pay() => throw new InvalidOperationException("Cannot pay, not submitted");
         
 
         public void Submit() => _context.SetState(new OrderReservedState(_context));
